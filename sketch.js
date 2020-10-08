@@ -4,7 +4,7 @@ var game,form, player;
 var database;
 var allPlayerInfo;
 var car1,car2,car3,car4,carArray;
-var car1Image,car2Image,car3Image,car4Image,trackImage;
+var car1Image,car2Image,car3Image,car4Image,trackImage,rank;
 function preload(){
     car1Image = loadImage("images/car1.png");
     car2Image = loadImage("images/car2.png");
@@ -25,11 +25,14 @@ function setup(){
 }
 
 function draw(){
-    background("white");
     if(playerCount==4){
      game.updateGameState(1);
     }
     if(gameState==1){
         game.play();
+    }
+    if(gameState==2){
+        game.updateGameState(2);
+        game.end();
     }
 }

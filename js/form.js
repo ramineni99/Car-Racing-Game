@@ -26,6 +26,7 @@ class Form{
 
         })
         this.reset.mousePressed(()=>{
+            player.updatePlayerRank(0);
             player.updatePlayerCount(0);
             game.updateGameState(0);
             database.ref("/").child("players").remove();
